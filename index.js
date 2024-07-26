@@ -19,14 +19,25 @@ const app = () => {
 
     const currentHashIdIdx = ids.findIndex(id => id === currentHash)
 
-    if (scrollDirection === 'up' && currentHashIdIdx + 1 <= slides.length - 1) {
-      setCurrentHash(ids[currentHashIdIdx + 1])
-    } else if (scrollDirection === 'down' && currentHashIdIdx - 1 >= 0) {
+    console.log('currentHashIdIdx: ', currentHashIdIdx)
+
+    if (scrollDirection === 'up' && currentHashIdIdx - 1 >= 0) {
+      console.log('up')
       setCurrentHash(ids[currentHashIdIdx - 1])
+    } else if (
+      scrollDirection === 'down' &&
+      currentHashIdIdx + 1 < ids.length
+    ) {
+      console.log('down')
+      setCurrentHash(ids[currentHashIdIdx + 1])
     }
 
     isWaiting = true
-    setTimeout(() => (isWaiting = false), 1000)
+    document.body.classList.add('overflow-hidden')
+    setTimeout(() => {
+      isWaiting = false
+      document.body.classList.remove('overflow-hidden')
+    }, 500)
   }
 
   addEventListener('scroll', handleScroll)

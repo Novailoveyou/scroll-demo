@@ -8,6 +8,10 @@ body {
   min-height: 100vh;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .gray {
   background-color: gray;
 }

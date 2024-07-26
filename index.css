@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.slide {
+  min-height: 100vh;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.black {
+  background-color: black;
+}
+
+.pink {
+  background-color: pink;
+}
